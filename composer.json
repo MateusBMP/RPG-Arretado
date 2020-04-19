@@ -1,10 +1,11 @@
 {
-    "name": "laravel/laravel",
-    "type": "project",
-    "description": "The Laravel Framework.",
+    "name": "mateusbmp/rpg-arretado",
+    "type": "website",
+    "description": "Website da mesa de RPG \"RPG Arretado\"",
     "keywords": [
-        "framework",
-        "laravel"
+        "website",
+        "laravel",
+        "rpg"
     ],
     "license": "MIT",
     "require": {
@@ -13,7 +14,8 @@
         "fruitcake/laravel-cors": "^1.0",
         "guzzlehttp/guzzle": "^6.3",
         "laravel/framework": "^7.0",
-        "laravel/tinker": "^2.0"
+        "laravel/tinker": "^2.0",
+        "laravel/ui": "^2.0"
     },
     "require-dev": {
         "facade/ignition": "^2.0",
