@@ -18,3 +18,18 @@ $yellow: #ffed4a;
 $green: #38c172;
 $teal: #4dc0b5;
 $cyan: #6cb2eb;
+
+// Pallete
+$primary: #E63946;
+$secondary: #457B9D;
+$light-secondary: #A8DADC;
+$dark-secondary: #1D3557;
+$light: #F1FAEE;
+
+$theme-colors: (
+    "primary": $primary,
+    "secondary": $secondary,
+    "light-secondary": $light-secondary,
+    "dark-secondary": $dark-secondary,
+    "light": $light
+);

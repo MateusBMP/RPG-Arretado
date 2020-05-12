@@ -1,23 +1,21 @@
 @extends('layouts.app')
 
+@section('style')
+    <link rel="stylesheet" href="{{ asset('css/welcome.css') }}" />
+@endsection
+
+@section('script')
+    <script src="{{ asset('js/welcome.js') }}" defer></script>
+@endsection
+
 @section('content')
     <div class="vh-100 d-flex align-items-center justify-content-center">
-        @if (Route::has('login'))
-            <div class="mt-3 mr-2 links">
-                @auth
-                    <a href="{{ url('/home') }}">Home</a>
-                @else
-                    <a href="{{ route('login') }}">Login</a>
-
-                    @if (Route::has('register'))
-                        <a href="{{ route('register') }}">Register</a>
-                    @endif
-                @endauth
-            </div>
-        @endif
-
         <div class="text-center">
-            <div class="display-2 mb-4">
+            <div class="d-flex justify-content-end mr-n4">
+                <x-connected-user user="{{ Auth::user() }}" />
+            </div>
+
+            <div class="app-name display-2 mb-4">
                 {{ config("app.name") }}
             </div>
 

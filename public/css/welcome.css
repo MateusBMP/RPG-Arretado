@@ -1,0 +1,9 @@
+.app-name {
+  -webkit-animation: slide-out-blurred-top 0.45s cubic-bezier(0.95, 0.05, 0.795, 0.035) reverse;
+  animation: slide-out-blurred-top 0.45s cubic-bezier(0.95, 0.05, 0.795, 0.035) reverse;
+}
+
+.connected-user {
+  position: absolute;
+}
+
