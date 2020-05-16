@@ -14,6 +14,8 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::middleware('auth:api')->get('/user', function (Request $request) {
-    return $request->user();
+Route::middleware('token:api')->get('/user', function (Request $request) {
+    $user = \App\User::findToken($request->header('remember_token'));
+
+    return response()->json($user);
 });

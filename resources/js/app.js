@@ -8,12 +8,11 @@ require('./bootstrap');
 
 window.Vue = require('vue');
 
+window.axios.defaults.headers.common['remember_token'] = document.head.querySelector("[name~=remember_token]").content;
+
 Vue.prototype.app = {
     route: window.location.href,
     name: document.head.querySelector("[name~=app-name]").content,
-};
-Vue.prototype.user = {
-    authenticated: document.head.querySelector("[name~=authenticated]").content,
 };
 
 /**
@@ -28,6 +27,7 @@ Vue.prototype.user = {
 // files.keys().map(key => Vue.component(key.split('/').pop().split('.')[0], files(key).default))
 
 Vue.component('example-component', require('./components/ExampleComponent.vue').default);
+Vue.component('user-icon-component', require('./components/UserIconComponent.vue').default);
 Vue.component('welcome-view', require('./views/WelcomeView.vue').default);
 
 /**

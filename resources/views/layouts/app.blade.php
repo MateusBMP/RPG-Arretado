@@ -5,7 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <meta name="csrf-token" content="{{ csrf_token() }}">
         <meta name="app-name" content="{{ config("app.name") }}">
-        <meta name="authenticated" content="{{ (Auth::user() !== NULL) }}">
+        <meta name="remember_token" content="{{ Auth::user()->remember_token ?? "" }}">
 
         <title>{{ config("app.name") }}</title>
 
@@ -18,6 +18,8 @@
             @yield('content')
         </div>
 
+        <script src="{{ asset('js/manifest.js') }}" defer></script>
+        <script src="{{ asset('js/vendor.js') }}" defer></script>
         <script src="{{ asset('js/app.js') }}" defer></script>
 
         @yield('script')

@@ -3,13 +3,7 @@
         <div class="vh-100 d-flex align-items-center justify-content-center">
             <div class="text-center">
                 <div class="d-flex justify-content-end mr-n4">
-                    <div class="user-icon">
-                        <div class="user-icon__image rounded-circle border-primary">
-                            <a :href="app.route+'login'">
-                                <i class="border rounded-circle border-secondary p-1 i-Geek" data-container="body" data-toggle="popover" data-placement="top" data-content="Conecte-se!"></i>
-                            </a>
-                        </div>
-                    </div>
+                    <user-icon-component :user="user" />
                 </div>
 
                 <div class="app-name display-2 mb-4">
@@ -28,8 +22,20 @@
 
 <script>
     export default {
+        data() {
+            return {
+                user: null,
+            }
+        },
+        methods: {
+            getUser: async function () {
+                window.axios.get('api/user')
+                    .then(response => (this.user = response.data))
+                    .catch(error => (console.log(error)));
+            },
+        },
         mounted() {
-            $(".user-icon__image i").popover('show');
+            this.getUser();
         }
     }
 </script>
