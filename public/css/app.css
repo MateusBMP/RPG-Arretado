@@ -4716,21 +4716,21 @@ i {
   }
 }
 
-.connected-user {
+.user-icon {
   -webkit-animation: pulsate-bck 4.5s ease-in-out infinite both;
   animation: pulsate-bck 4.5s ease-in-out infinite both;
 }
 
-.connected-user__image {
+.user-icon__image {
   position: relative;
   font-size: 1.5em;
 }
 
-.connected-user a {
+.user-icon a {
   color: #636b6f;
 }
 
-.connected-user a:hover {
+.user-icon a:hover {
   text-decoration: none;
 }
 

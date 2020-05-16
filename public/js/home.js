@@ -84,17 +84,29 @@
 /******/ 	return __webpack_require__(__webpack_require__.s = 1);
 /******/ })
 /************************************************************************/
-/******/ ([
-/* 0 */,
-/* 1 */
-/*!***************************************!*\
-  !*** multi ./resources/js/welcome.js ***!
-  \***************************************/
+/******/ ({
+
+/***/ "./resources/js/home.js":
+/*!******************************!*\
+  !*** ./resources/js/home.js ***!
+  \******************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+$(function () {});
+
+/***/ }),
+
+/***/ 1:
+/*!************************************!*\
+  !*** multi ./resources/js/home.js ***!
+  \************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-!(function webpackMissingModule() { var e = new Error("Cannot find module '/home/mateusbmp/Projetos/RPG-Arretado/resources/js/welcome.js'"); e.code = 'MODULE_NOT_FOUND'; throw e; }());
+module.exports = __webpack_require__(/*! /home/mateusbmp/Projetos/RPG-Arretado/resources/js/home.js */"./resources/js/home.js");
 
 
 /***/ })
-/******/ ]);
+
+/******/ });

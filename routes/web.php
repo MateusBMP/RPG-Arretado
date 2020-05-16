@@ -15,4 +15,4 @@ use Illuminate\Support\Facades\Route;
 
 Auth::routes();
 
-Route::get('/', 'ShowWelcome')->name('welcome');
+Route::get('/', 'ShowHome')->name('home');
