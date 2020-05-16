@@ -1972,7 +1972,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony default export */ __webpack_exports__["default"] = ({
   mounted: function mounted() {
     $(".user-icon__image i").popover('show');
-    console.log('WelcomeView mounted.');
   }
 });
 
@@ -49914,6 +49913,9 @@ window.Vue = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.common.
 Vue.prototype.app = {
   route: window.location.href,
   name: document.head.querySelector("[name~=app-name]").content
+};
+Vue.prototype.user = {
+  authenticated: document.head.querySelector("[name~=authenticated]").content
 };
 /**
  * The following block of code may be used to automatically register your

@@ -14,9 +14,13 @@
 
     a {
         color: $body-color;
+        
+        &:hover {
+            text-decoration: none;
+        }
     }
 
-    a:hover {
-        text-decoration: none;
+    i:hover {
+        border-color: $primary !important;
     }
 }

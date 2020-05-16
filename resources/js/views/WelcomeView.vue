@@ -30,7 +30,6 @@
     export default {
         mounted() {
             $(".user-icon__image i").popover('show');
-            console.log('WelcomeView mounted.')
         }
     }
 </script>

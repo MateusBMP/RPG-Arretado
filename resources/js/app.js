@@ -12,6 +12,9 @@ Vue.prototype.app = {
     route: window.location.href,
     name: document.head.querySelector("[name~=app-name]").content,
 };
+Vue.prototype.user = {
+    authenticated: document.head.querySelector("[name~=authenticated]").content,
+};
 
 /**
  * The following block of code may be used to automatically register your
