@@ -36,4 +36,8 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    public function scopeFindToken($query, $remember_token) {
+        return $query->where('remember_token', $remember_token)->first();
+    }
 }
