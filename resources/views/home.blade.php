@@ -9,5 +9,5 @@
 @endsection
 
 @section('content')
-    <welcome-view></welcome-view>
+    <welcome-view :connected="{{ Auth::check() ? 1 : 0 }}"></welcome-view>
 @endsection

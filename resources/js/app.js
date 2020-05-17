@@ -12,6 +12,7 @@ window.axios.defaults.headers.common['remember_token'] = document.head.querySele
 
 Vue.prototype.app = {
     route: window.location.href,
+    csrfToken: document.head.querySelector("[name~=csrf-token]").content,
     name: document.head.querySelector("[name~=app-name]").content,
 };
 

@@ -1877,13 +1877,19 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
-  props: ['user'],
+  props: ['user', 'connected'],
   watch: {
     user: function user(newUser) {
       var content = "Conecte-se!";
 
-      if (newUser !== null) {
+      if (this.connected === 1) {
         var newUser_array = newUser.name.split(' ');
         var newUser_firstName = newUser_array[0];
         var newUser_lastName = newUser_array[newUser_array.length - 1];
@@ -1901,6 +1907,9 @@ __webpack_require__.r(__webpack_exports__);
       setTimeout(function () {
         $('.user-icon__image i').popover('show');
       }, 500);
+    },
+    disconnect: function disconnect() {
+      $('.user-icon__image form').submit();
     }
   },
   mounted: function mounted() {
@@ -1949,7 +1958,12 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 //
 //
 //
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
+  props: ['connected'],
   data: function data() {
     return {
       user: null
@@ -38428,17 +38442,42 @@ var render = function() {
       "div",
       { staticClass: "user-icon__image rounded-circle border-primary" },
       [
-        _c("a", { attrs: { href: _vm.app.route + "login" } }, [
-          _c("i", {
-            staticClass: "border rounded-circle border-secondary p-1 i-Geek",
-            attrs: {
-              "data-container": "body",
-              "data-toggle": "popover",
-              "data-placement": "top",
-              "data-content": "Conecte-se!"
-            }
-          })
-        ])
+        _vm.connected === 1
+          ? _c(
+              "form",
+              { attrs: { action: _vm.app.route + "logout", method: "post" } },
+              [
+                _c("a", { on: { click: _vm.disconnect } }, [
+                  _c("input", {
+                    attrs: { type: "hidden", name: "_token" },
+                    domProps: { value: _vm.app.csrfToken }
+                  }),
+                  _vm._v(" "),
+                  _c("i", {
+                    staticClass:
+                      "border rounded-circle border-secondary p-1 i-Geek",
+                    attrs: {
+                      "data-container": "body",
+                      "data-toggle": "popover",
+                      "data-placement": "top",
+                      "data-content": "Conecte-se!"
+                    }
+                  })
+                ])
+              ]
+            )
+          : _c("a", { attrs: { href: _vm.app.route + "login" } }, [
+              _c("i", {
+                staticClass:
+                  "border rounded-circle border-secondary p-1 i-Geek",
+                attrs: {
+                  "data-container": "body",
+                  "data-toggle": "popover",
+                  "data-placement": "top",
+                  "data-content": "Conecte-se!"
+                }
+              })
+            ])
       ]
     )
   ])
@@ -38476,7 +38515,11 @@ var render = function() {
           _c(
             "div",
             { staticClass: "d-flex justify-content-end mr-n4" },
-            [_c("user-icon-component", { attrs: { user: _vm.user } })],
+            [
+              _c("user-icon-component", {
+                attrs: { user: _vm.user, connected: _vm.connected }
+              })
+            ],
             1
           ),
           _vm._v(" "),
@@ -38486,26 +38529,29 @@ var render = function() {
             )
           ]),
           _vm._v(" "),
-          _vm._m(0)
+          _vm.connected === 1
+            ? _c("div", { staticClass: "links" }, [
+                _c("a", { attrs: { href: "#" } }, [_vm._v("Mesa")]),
+                _vm._v(" "),
+                _c("a", { attrs: { href: "#" } }, [_vm._v("Fichas")]),
+                _vm._v(" "),
+                _c("a", { attrs: { href: "#" } }, [_vm._v("Arquivos")])
+              ])
+            : _c("div", { staticClass: "links" }, [
+                _c("a", { attrs: { href: _vm.app.route + "login" } }, [
+                  _vm._v("Conectar")
+                ]),
+                _vm._v(" "),
+                _c("a", { attrs: { href: _vm.app.route + "register" } }, [
+                  _vm._v("Cadastre-se")
+                ])
+              ])
         ])
       ]
     )
   ])
 }
-var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "links" }, [
-      _c("a", { attrs: { href: "#" } }, [_vm._v("Mesa")]),
-      _vm._v(" "),
-      _c("a", { attrs: { href: "#" } }, [_vm._v("Fichas")]),
-      _vm._v(" "),
-      _c("a", { attrs: { href: "#" } }, [_vm._v("Arquivos")])
-    ])
-  }
-]
+var staticRenderFns = []
 render._withStripped = true
 
 
@@ -38706,6 +38752,7 @@ window.Vue = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.common.
 window.axios.defaults.headers.common['remember_token'] = document.head.querySelector("[name~=remember_token]").content;
 Vue.prototype.app = {
   route: window.location.href,
+  csrfToken: document.head.querySelector("[name~=csrf-token]").content,
   name: document.head.querySelector("[name~=app-name]").content
 };
 /**

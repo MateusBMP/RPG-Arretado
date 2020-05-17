@@ -1,7 +1,13 @@
 <template>
     <div class="user-icon">
         <div class="user-icon__image rounded-circle border-primary">
-            <a :href="app.route+'login'">
+            <form v-if="connected === 1" :action="app.route+'logout'" method="post">
+                <a @click="disconnect">
+                    <input type="hidden" name="_token" :value="app.csrfToken" />
+                    <i class="border rounded-circle border-secondary p-1 i-Geek" data-container="body" data-toggle="popover" data-placement="top" data-content="Conecte-se!"></i>
+                </a>
+            </form>
+            <a v-else :href="app.route+'login'">
                 <i class="border rounded-circle border-secondary p-1 i-Geek" data-container="body" data-toggle="popover" data-placement="top" data-content="Conecte-se!"></i>
             </a>
         </div>
@@ -10,12 +16,12 @@
 
 <script>
     export default {
-        props: ['user'],
+        props: ['user', 'connected'],
         watch: {
             user: function(newUser) {
                 var content = "Conecte-se!";
 
-                if (newUser !== null) {
+                if (this.connected === 1) {
                     const newUser_array = newUser.name.split(' ');
                     const newUser_firstName = newUser_array[0];
                     const newUser_lastName = newUser_array[newUser_array.length-1];
@@ -34,6 +40,9 @@
                 setTimeout(function() {
                     $('.user-icon__image i').popover('show');
                 }, 500);
+            },
+            disconnect: function() {
+                $('.user-icon__image form').submit();
             }
         },
         mounted() {
