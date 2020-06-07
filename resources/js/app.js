@@ -11,7 +11,7 @@ window.Vue = require('vue');
 window.axios.defaults.headers.common['remember_token'] = document.head.querySelector("[name~=remember_token]").content;
 
 Vue.prototype.app = {
-    route: window.location.href,
+    route: window.location.origin,
     csrfToken: document.head.querySelector("[name~=csrf-token]").content,
     name: document.head.querySelector("[name~=app-name]").content,
 };

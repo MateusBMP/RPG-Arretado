@@ -11,7 +11,7 @@
                 </div>
 
                 <div v-if="connected === 1" class="links">
-                    <a href="#">Mesa</a>
+                    <a :href="app.route+'/mesa'">Mesa</a>
                     <a href="#">Fichas</a>
                     <a href="#">Arquivos</a>
                 </div>
