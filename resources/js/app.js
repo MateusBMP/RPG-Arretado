@@ -29,7 +29,6 @@ Vue.prototype.app = {
 
 Vue.component('example-component', require('./components/ExampleComponent.vue').default);
 Vue.component('user-icon-component', require('./components/UserIconComponent.vue').default);
-Vue.component('welcome-view', require('./views/WelcomeView.vue').default);
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to

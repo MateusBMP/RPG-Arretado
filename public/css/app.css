@@ -4716,6 +4716,11 @@ i {
   }
 }
 
+.reference {
+  right: 0;
+  bottom: 0;
+}
+
 .user-icon {
   -webkit-animation: pulsate-bck 4.5s ease-in-out infinite both;
   animation: pulsate-bck 4.5s ease-in-out infinite both;

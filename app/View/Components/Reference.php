@@ -4,7 +4,7 @@ namespace App\View\Components;
 
 use Illuminate\View\Component;
 
-class AWWBoard extends Component
+class Reference extends Component
 {
     /**
      * Create a new component instance.
@@ -23,6 +23,6 @@ class AWWBoard extends Component
      */
     public function render()
     {
-        return view('components.aww-board');
+        return view('components.reference');
     }
 }

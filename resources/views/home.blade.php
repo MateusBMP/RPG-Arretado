@@ -9,5 +9,22 @@
 @endsection
 
 @section('content')
-    <welcome-view :connected="{{ Auth::check() ? 1 : 0 }}"></welcome-view>
+    <div class="welcome-view">
+        <div class="vh-100 d-flex align-items-center justify-content-center">
+            <div class="text-center">
+                <div class="d-flex justify-content-end mr-n4">
+                    <user-icon-component />
+                </div>
+
+                <div class="app-name display-2 mb-4">
+                    {{ config("app.name") }}
+                </div>
+
+                <div class="links">
+                    <a href="{{ url('/login') }}">Conectar</a>
+                    <a href="{{ url('/register') }}">Cadastre-se</a>
+                </div>
+            </div>
+        </div>
+    </div>
 @endsection

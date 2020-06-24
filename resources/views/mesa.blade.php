@@ -9,5 +9,8 @@
 @endsection
 
 @section('content')
-    <x-aww-board type="principal" />
+    <div class="mesa position-relative vh-100 vw-100 p-0 clearfix">
+        <x-aww-board />
+        <x-reference />
+    </div>
 @endsection
