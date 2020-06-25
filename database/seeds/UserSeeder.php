@@ -16,6 +16,7 @@ class UserSeeder extends Seeder
             'email' => 'butcraft@gmail.com',
             'password' => Hash::make('hb7a9eth'),
             'remember_token' => Str::random(100),
+            'created_at' => now()
         ]);
     }
 }
