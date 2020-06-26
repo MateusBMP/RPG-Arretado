@@ -40,4 +40,12 @@ class User extends Authenticatable
     public function scopeFindToken($query, $remember_token) {
         return $query->where('remember_token', $remember_token)->first();
     }
+    
+    /**
+     * Get the icon that owns the user.
+     */
+    public function icon()
+    {
+        return $this->belongsTo('App\Icon');
+    }
 }

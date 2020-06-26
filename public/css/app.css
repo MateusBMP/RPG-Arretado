@@ -4830,6 +4830,11 @@ i {
   text-decoration: none;
 }
 
+.user-icon a img {
+  max-width: 35px;
+  padding: 0.1rem;
+}
+
 .user-icon i:hover {
   border-color: #E63946 !important;
 }

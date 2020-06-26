@@ -12,6 +12,7 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
+        $this->call(IconSeeder::class);
         $this->call(UserSeeder::class);
     }
 }

@@ -4,7 +4,7 @@
             <form v-if="connected" :action="app.route+'/logout'" method="post">
                 <a @click="disconnect">
                     <input type="hidden" name="_token" :value="app.csrfToken" />
-                    <i class="border rounded-circle border-secondary p-1 i-Geek" data-container="body" data-toggle="popover" data-placement="left" :data-content="popoverContent"></i>
+                    <img :src="app.route+'/images/users-icons/'+user.icon" class="border rounded-circle border-secondary" data-container="body" data-toggle="popover" data-placement="left" :data-content="popoverContent" />
                 </a>
             </form>
             <a v-else :href="app.route+'/login'">
@@ -46,7 +46,7 @@
         },
         methods: {
             getUser: async function () {
-                window.axios.get('api/user')
+                window.axios.get('api/users/connected')
                     .then(response => (this.connected = response.data))
                     .catch(error => (console.log(error)));
             },
