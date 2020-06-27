@@ -15,7 +15,7 @@ class AuthenticateWithToken
      */
     public function handle($request, Closure $next)
     {
-        if (\App\User::findToken($request->header('remember_token')) === null) {
+        if (\App\User::findByToken($request->header('remember_token'))->first() == NULL) {
             abort(401);
         }
 

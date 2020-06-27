@@ -4822,17 +4822,17 @@ i {
   font-size: 1.5em;
 }
 
+.user-icon .size-1 {
+  max-width: 35px;
+  padding: 0.1rem;
+}
+
 .user-icon a {
   color: #636b6f;
 }
 
 .user-icon a:hover {
   text-decoration: none;
-}
-
-.user-icon a img {
-  max-width: 35px;
-  padding: 0.1rem;
 }
 
 .user-icon i:hover {

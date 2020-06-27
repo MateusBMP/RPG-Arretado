@@ -1,5 +1,13 @@
 @extends('layouts.auth')
 
+@section('style')
+    <link rel="stylesheet" href="{{ asset('css/auth/register.css') }}" />
+@endsection
+
+@section('script')
+    <script src="{{ asset('js/auth/register.js') }}" defer></script>
+@endsection
+
 @section('content')
 <div class="container">
     <div class="row justify-content-center">
@@ -58,6 +66,21 @@
 
                             <div class="col-md-6">
                                 <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required autocomplete="new-password">
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label for="icon-id" class="col-md-4 col-form-label text-md-right">{{ __('User Icon') }}</label>
+
+                            <div class="col-md-6">
+                                <div class="card p-3 border rounded icons-list">
+                                    <input id="icon-id" type="hidden" name="icon_id" value="1" required />
+                                    <div class="d-flex flex-wrap align-items-center">
+                                        @foreach ($icons as $icon)
+                                            <img src="{{ asset("images/users-icons/{$icon->filename}") }}" class="icons-list__icon m-1 border rounded-circle {{ ($loop->first) ? 'border-primary' : 'border-light-secondary' }}" data-icon-id="{{ $icon->id }}" />
+                                        @endforeach
+                                    </div>
+                                </div>
                             </div>
                         </div>
 

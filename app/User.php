@@ -16,7 +16,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password',
+        'name', 'email', 'password', 'icon_id', 'remember_token'
     ];
 
     /**
@@ -25,7 +25,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $hidden = [
-        'password', 'remember_token',
+        'password',
     ];
 
     /**
@@ -37,8 +37,8 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
-    public function scopeFindToken($query, $remember_token) {
-        return $query->where('remember_token', $remember_token)->first();
+    public function scopeFindByToken($query, $remember_token) {
+        return $query->where('remember_token', $remember_token);
     }
     
     /**

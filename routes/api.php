@@ -14,7 +14,6 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::middleware('token:api')->group(function () {
-    // Route::apiResource('users', 'UserController');
-    Route::get('users/connected', 'Api\UserController@connected');
-});
+
+// Route::apiResource('users', 'UserController');
+Route::get('users/connected', 'Api\UserController@connected');

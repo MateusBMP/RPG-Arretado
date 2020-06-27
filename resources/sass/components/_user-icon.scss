@@ -7,16 +7,19 @@
         font-size: 1.5em;
     }
 
+    $sizes: (1: 35px);
+    @each $i, $val in $sizes {
+        .size-#{$i} {
+            max-width: $val;
+            padding: 0.1rem;
+        }
+    }
+
     a {
         color: $body-color;
         
         &:hover {
             text-decoration: none;
-        }
-
-        img {
-            max-width: 35px;
-            padding: 0.1rem;
         }
     }
 

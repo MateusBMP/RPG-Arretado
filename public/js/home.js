@@ -11,7 +11,7 @@ eval("$(function () {});//# sourceURL=[module]\n//# sourceMappingURL=data:applic
 
 /***/ }),
 
-/***/ 1:
+/***/ 2:
 /*!************************************!*\
   !*** multi ./resources/js/home.js ***!
   \************************************/
@@ -23,4 +23,4 @@ module.exports = __webpack_require__(/*! /home/mateusbmp/Projetos/RPG-Arretado/r
 
 /***/ })
 
-},[[1,"/js/manifest"]]]);
+},[[2,"/js/manifest"]]]);

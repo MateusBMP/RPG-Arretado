@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class Icon extends Model
 {
     /**
-     * Get the users for the icon.
+     * Get icon users.
      */
     public function users()
     {

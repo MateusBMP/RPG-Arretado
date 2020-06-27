@@ -1,0 +1,12 @@
+.icons-list {
+    border-color: #ced4da !important;
+
+    .icons-list__icon {
+        max-width: 35px;
+        padding: 2px;
+
+        &:hover {
+            cursor: pointer;
+        }
+    }
+}

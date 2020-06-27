@@ -71,7 +71,7 @@ class UserController extends Controller
      */
     public function connected(Request $request)
     {
-        $user = new UserResource(User::findToken($request->header('remember_token')));
+        $user = new UserResource(User::findByToken($request->header('remember_token'))->first());
 
         return response()->json($user);
     }

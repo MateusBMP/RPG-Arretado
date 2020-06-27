@@ -1,5 +1,7 @@
 {
     "/js/app.js": "/js/app.js",
+    "/js/auth/register.js": "/js/auth/register.js",
+    "/css/auth/register.css": "/css/auth/register.css",
     "/css/app.css": "/css/app.css",
     "/css/home.css": "/css/home.css",
     "/css/mesa.css": "/css/mesa.css",
