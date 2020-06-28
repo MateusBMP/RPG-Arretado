@@ -1,12 +1,4 @@
 .user-icon {
-    -webkit-animation: pulsate-bck 4.5s ease-in-out infinite both;
-            animation: pulsate-bck 4.5s ease-in-out infinite both;
-            
-    &__image {
-        position: relative;
-        font-size: 1.5em;
-    }
-
     $sizes: (1: 35px);
     @each $i, $val in $sizes {
         .size-#{$i} {
@@ -14,6 +6,15 @@
             padding: 0.1rem;
         }
     }
+
+    .user-icon__image {
+        position: relative;
+        font-size: 1.5em;
+    }
+}
+
+.user-icon_home {
+    @include animation-pulsate-bck(infinite);
 
     a {
         color: $body-color;

@@ -1,13 +1,3 @@
-.app-name {
-    $keyframe: slide-out-blurred-top;
-    $duration: 0.45s;
-    $timing-function: cubic-bezier(0.950, 0.050, 0.795, 0.035);
-    $direction: reverse;
-
-    -webkit-animation: $keyframe $duration $timing-function $direction;
-            animation: $keyframe $duration $timing-function $direction;
-}
-
 .user-icon {
     position: absolute;
 }

@@ -13,10 +13,10 @@
         <div class="vh-100 d-flex align-items-center justify-content-center">
             <div class="text-center">
                 <div class="d-flex justify-content-end mr-n4">
-                    <user-icon-component />
+                    <user-icon-component class="user-icon_home" />
                 </div>
 
-                <div class="app-name display-2 mb-4">
+                <div class="app-name display-2 mb-4 slide-out-blurred-top">
                     {{ config("app.name") }}
                 </div>
 

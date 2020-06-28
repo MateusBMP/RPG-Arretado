@@ -1,12 +1,15 @@
 <template>
     <div class="user-icon">
         <div class="user-icon__image rounded-circle border-primary">
-            <form v-if="connected" :action="app.route+'/logout'" method="post">
-                <a @click="disconnect">
-                    <input type="hidden" name="_token" :value="app.csrfToken" />
-                    <img :src="app.route+'/images/users-icons/'+user.icon" class="border rounded-circle border-secondary size-1" />
-                </a>
-            </form>
+            <div v-if="connected" class="dropleft">
+                <img :src="app.route+'/images/users-icons/'+user.icon" class="border rounded-circle border-secondary size-1" @click="rotate90cw()" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" />
+                <div class="dropdown-menu">
+                    <form :action="app.route+'/logout'" method="post">
+                        <input type="hidden" name="_token" :value="app.csrfToken" />
+                        <a class="dropdown-item" @click="disconnect">Desconectar</a>
+                    </form>
+                </div>
+            </div>
             <a v-else :href="app.route+'/login'">
                 <i class="border rounded-circle border-secondary p-1 i-Geek" data-container="body" data-toggle="popover" data-placement="top" data-content="Conecte-se!"></i>
             </a>
@@ -60,6 +63,17 @@
                             ) : 
                             console.log(error)
                     ));
+            },
+            rotate90cw: function () {
+                // $(".user-icon__image [data-toggle=\"dropdown\"]").removeClass('rotate-90-cw')
+
+                if ($(".user-icon__image [data-toggle=\"dropdown\"]").attr('aria-expanded') == "true") {
+                    $(".user-icon__image [data-toggle=\"dropdown\"]").removeClass('rotate-90-cw').delay(1).addClass('rotate-90-cw-reverse')
+                } else {
+                    $(".user-icon__image [data-toggle=\"dropdown\"]").removeClass('rotate-90-cw-reverse').delay(1).addClass('rotate-90-cw')
+                }
+
+                // $(".user-icon__image [data-toggle=\"dropdown\"]").addClass('rotate-90-cw')
             },
             disconnect: function() {
                 $('.user-icon__image form').submit();
