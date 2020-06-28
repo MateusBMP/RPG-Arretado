@@ -5,13 +5,5 @@ $(function() {
         setTimeout(function() {
             $('.screen-loader').addClass("invisible")
         }, 100)
-
-        // Exibe e, logo em seguida, desativa o popover do usuario conectado
-        setTimeout(function() {
-            $('.user-icon__image img').popover('show')
-        }, 700)
-        setTimeout(function() {
-            $('.user-icon__image img').popover('hide')
-        }, 7000)
     })
 })

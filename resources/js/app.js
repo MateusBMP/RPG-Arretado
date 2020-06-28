@@ -11,6 +11,7 @@ window.Vue = require('vue');
 window.axios.defaults.headers.common['remember_token'] = document.head.querySelector("[name~=remember_token]").content;
 
 Vue.prototype.app = {
+    bus: new Vue(),
     route: window.location.origin,
     csrfToken: document.head.querySelector("[name~=csrf-token]").content,
     name: document.head.querySelector("[name~=app-name]").content,
@@ -27,6 +28,7 @@ Vue.prototype.app = {
 // const files = require.context('./', true, /\.vue$/i)
 // files.keys().map(key => Vue.component(key.split('/').pop().split('.')[0], files(key).default))
 
+Vue.component('system-alert-component', require('./components/SystemAlertComponent.vue').default);
 Vue.component('user-icon-component', require('./components/UserIconComponent.vue').default);
 
 /**

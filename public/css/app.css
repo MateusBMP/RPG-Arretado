@@ -4812,6 +4812,11 @@ i {
   z-index: 1080;
 }
 
+.system-alert {
+  top: 13px;
+  right: 16px;
+}
+
 .user-icon {
   -webkit-animation: pulsate-bck 4.5s ease-in-out infinite both;
   animation: pulsate-bck 4.5s ease-in-out infinite both;

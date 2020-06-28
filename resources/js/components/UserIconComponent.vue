@@ -4,7 +4,7 @@
             <form v-if="connected" :action="app.route+'/logout'" method="post">
                 <a @click="disconnect">
                     <input type="hidden" name="_token" :value="app.csrfToken" />
-                    <img :src="app.route+'/images/users-icons/'+user.icon" class="border rounded-circle border-secondary size-1" data-container="body" data-toggle="popover" data-placement="left" :data-content="popoverContent" />
+                    <img :src="app.route+'/images/users-icons/'+user.icon" class="border rounded-circle border-secondary size-1" />
                 </a>
             </form>
             <a v-else :href="app.route+'/login'">
@@ -30,18 +30,22 @@
                     this.user = userdata
 
                     if ($.isEmptyObject(this.user)) {
+                        // Show popover
                         setTimeout(function() {
                             $('.user-icon__image i').popover('show')
                         }, 500);
+                    } else {
+                        // Emit user connected event
+                        this.app.bus.$emit('user-connected', this.userName)
                     }
                 }
             },
-            popoverContent: function () {
+            userName: function () {
                 const newUser_array = this.user.name.split(' ')
                 const newUser_firstName = newUser_array[0]
                 const newUser_lastName = newUser_array[newUser_array.length-1]
 
-                return `Olá, ${newUser_firstName} ${newUser_lastName}`;
+                return `${newUser_firstName} ${newUser_lastName}`
             }
         },
         methods: {
